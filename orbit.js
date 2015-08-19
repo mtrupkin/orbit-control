@@ -114,16 +114,11 @@ function OrbitControl(position, target, fov, aspect, near, far) {
 
   this.initRotate = function(mouse) {
     vec2.copy(this.rotateStart, mouse)
-    console.log("init-rotate:")
-    console.log(this.rotateStart)
   }
 
   // mouse coordinates as percentages of canvas size
   // (mouse.x / canvas.clientWidth, mouse.y / canvas.clientHeight)
-  this.rotate = function(mouse) {
-    console.log("rotate:")
-    console.log(this.rotateStart)
-    
+  this.rotate = function(mouse) {    
     vec2.copy(this.rotateEnd, mouse)
     vec2.subtract(this.rotateDelta, this.rotateEnd, this.rotateStart)
 
