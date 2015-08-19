@@ -53,6 +53,8 @@ window.onload = function init()
   modelView = gl.getUniformLocation(program, "modelView");
   projection = gl.getUniformLocation(program, "projection");
 
+  gl.uniformMatrix4fv(projection, false, camera.projectionMatrix);
+
   vPosition = gl.getAttribLocation(program, "vPosition");    
   gl.enableVertexAttribArray(vPosition);
 
@@ -213,7 +215,6 @@ function render()
 
   camera.update();
 
-  gl.uniformMatrix4fv(projection, false, camera.projectionMatrix);
   gl.uniformMatrix4fv(modelView, false, camera.viewMatrix);
 
   gl.bindBuffer(gl.ARRAY_BUFFER, vPyramid);
