@@ -213,8 +213,8 @@ function render()
 
   camera.update();
 
-  gl.uniformMatrix4fv(modelView, false, camera.modelViewMatrix);
   gl.uniformMatrix4fv(projection, false, camera.projectionMatrix);
+  gl.uniformMatrix4fv(modelView, false, camera.viewMatrix);
 
   gl.bindBuffer(gl.ARRAY_BUFFER, vPyramid);
   gl.vertexAttribPointer(vPosition, vPyramid.itemSize, gl.FLOAT, false, 0, 0);

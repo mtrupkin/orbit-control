@@ -14,7 +14,7 @@ function OrbitControl(position, target, fov, aspect, near, far) {
   this.up = vec3.fromValues(0, 1, 0)
 
   this.projectionMatrix = mat4.create()
-  this.modelViewMatrix = mat4.create()
+  this.viewMatrix = mat4.create()
 
   this.autoRotate = false
   this.rotateSpeed = 1.0  
@@ -57,7 +57,7 @@ function OrbitControl(position, target, fov, aspect, near, far) {
   var EPS = 0.000001
 
   mat4.perspective(this.projectionMatrix, fov, aspect, near, far)
-  mat4.lookAt(this.modelViewMatrix, this.position, this.target, this.up)
+  mat4.lookAt(this.viewMatrix, this.position, this.target, this.up)
 
   // methods
   this.update = function () {
@@ -104,7 +104,7 @@ function OrbitControl(position, target, fov, aspect, near, far) {
     vec3.copy(this.position, this.target)
     vec3.add(this.position, this.position, this.offset)
 
-    mat4.lookAt(this.modelViewMatrix, this.position, this.target, this.up)
+    mat4.lookAt(this.viewMatrix, this.position, this.target, this.up)
 
     this.thetaDelta = 0
     this.phiDelta = 0
