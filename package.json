@@ -1,0 +1,29 @@
+{
+  "name": "orbit-control",
+  "version": "1.0.0",
+  "description": "Orbiting 3D camera for WebGL",
+  "main": "orbit.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "gl-matrix": "^2.2.0"
+  },
+  "devDependencies": {
+    "raf": "^3.1.0"
+  },  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mtrupkin/orbit-control.git"
+  },
+  "keywords": [
+    "orbit",
+    "camera"
+  ],
+  "author": "Michael Trupkin",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
